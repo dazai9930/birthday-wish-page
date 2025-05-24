@@ -11,7 +11,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('images (1).jpg') no-repeat center center fixed;
+      background: url('https://i.pinimg.com/originals/18/e0/82/18e08250f87f78ed2636eab0c9cf4a29.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
       justify-content: center;
@@ -23,91 +23,65 @@
 
     .container {
       text-align: center;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 2.5rem;
-      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1.5rem;
+      border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      max-width: 90%;
+      width: 95%;
+      max-width: 480px;
       opacity: 0;
-    }
-
-    h1, p, .photos img {
-      opacity: 0;
-      animation-play-state: paused;
     }
 
     h1 {
-      font-size: 2.8em;
+      font-size: 2em;
       color: #ff4b91;
-      margin-bottom: 15px;
       font-family: 'Pacifico', cursive;
+      margin-bottom: 10px;
       animation: fadeIn 2s ease-out forwards;
     }
 
     p {
-      font-size: 1.25em;
-      color: #555;
-      margin-bottom: 30px;
+      font-size: 1em;
+      color: #333;
+      margin-bottom: 20px;
       animation: fadeIn 2s ease-out forwards;
     }
 
     .photos {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      justify-content: center;
+      gap: 10px;
     }
 
     .photos img {
-      width: 200px;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      width: 100px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s;
       animation: floatPic 4s ease-in-out infinite, bounceIn 1s ease forwards;
       animation-play-state: paused;
     }
 
     .photos img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes floatPic {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-6px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
 
     @keyframes bounceIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-      60% {
-        opacity: 1;
-        transform: scale(1.1);
-      }
-      80% {
-        transform: scale(0.95);
-      }
-      100% {
-        transform: scale(1);
-      }
+      0% { opacity: 0; transform: scale(0.5); }
+      60% { opacity: 1; transform: scale(1.1); }
+      80% { transform: scale(0.95); }
+      100% { transform: scale(1); }
     }
 
     .hearts, .stickers, .confetti {
@@ -123,102 +97,49 @@
 
     .hearts span {
       position: absolute;
-      display: block;
+      font-size: 1.5rem;
       animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
     }
 
     .stickers img {
       position: absolute;
-      display: block;
-      animation: float 45s linear infinite;
       opacity: 0.8;
+      animation: float 40s linear infinite;
     }
 
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .hearts span:nth-child(1) { left: 5%; animation-delay: 0s; }
-    .hearts span:nth-child(2) { left: 20%; animation-delay: 2s; }
-    .hearts span:nth-child(3) { left: 35%; animation-delay: 4s; }
-    .hearts span:nth-child(4) { left: 55%; animation-delay: 1s; }
-    .hearts span:nth-child(5) { left: 70%; animation-delay: 3s; }
-    .hearts span:nth-child(6) { left: 85%; animation-delay: 5s; }
-
-    .stickers img.cat {
-      width: 110px;
-      left: 15%;
-      animation-delay: 1s;
-    }
-
-    .stickers img.shinchan {
-      width: 150px;
-      left: 65%;
-      animation-delay: 3s;
-    }
-
-    .stickers img.cat2 {
-      width: 110px;
-      left: 35%;
-      animation-delay: 5s;
-    }
-
-    .stickers img.shinchan2 {
-      width: 130px;
-      left: 80%;
-      animation-delay: 7s;
-    }
+    .stickers img.cat { width: 70px; left: 10%; animation-delay: 1s; }
+    .stickers img.cat2 { width: 70px; left: 30%; animation-delay: 5s; }
+    .stickers img.shinchan { width: 90px; left: 60%; animation-delay: 3s; }
+    .stickers img.shinchan2 { width: 90px; left: 80%; animation-delay: 6s; }
 
     .confetti span {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       background: pink;
-      animation: confetti 8s linear infinite;
+      animation: confetti 6s linear infinite;
       border-radius: 50%;
     }
 
     @keyframes confetti {
-      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
     }
 
-    audio {
-      display: none;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2em;
-      }
-
-      .photos img {
-        width: 140px;
-      }
-
-      .stickers img {
-        width: 80px;
-      }
-    }
+    audio { display: none; }
 
     #start-button {
-      margin-top: 20px;
-      padding: 10px 25px;
+      padding: 10px 20px;
       font-size: 1em;
-      background-color: #ff4b91;
+      margin-top: 20px;
+      background: #ff4b91;
       color: white;
       border: none;
       border-radius: 10px;
@@ -227,63 +148,66 @@
 
     #message {
       margin-top: 15px;
-      font-size: 1.1em;
+      font-size: 1em;
       color: #333;
       opacity: 0;
       transition: opacity 1s ease;
+    }
+
+    @media (max-width: 400px) {
+      .photos img { width: 90px; }
+      .stickers img { width: 60px; }
+      h1 { font-size: 1.7em; }
     }
   </style>
 </head>
 <body>
   <audio id="bg-music" loop>
-    <source src="https://soundcloud.com/blacklbeatz/escape?in=blacklbeatz/sets/lofi-type-beat-lo-fi-beats-1&si=13648119cc0f4eb5ab22de739a665876&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d0548f3f14.mp3" type="audio/mpeg">
   </audio>
 
   <button id="start-button" onclick="startPage()">Tap Here 💖</button>
   <div id="message"></div>
 
   <div class="hearts">
-    <span>💖</span>
-    <span>💗</span>
-    <span>💞</span>
-    <span>💕</span>
-    <span>💘</span>
-    <span>❤️</span>
+    <span>💖</span><span>💗</span><span>💞</span><span>💕</span><span>💘</span><span>❤️</span>
   </div>
 
   <div class="stickers">
-    <img src="8.jpej.jpg" class="shinchan" alt="Shinchan Sticker">
-    <img src="download (1).jpg" class="cat" alt="Cat Sticker">
-    <img src="download (2).jpg" class="cat2" alt="Cat Sticker 2">
-    <img src="9.jpej.jpg" class="shinchan2" alt="Shinchan Sticker 2">
+    <img src="7.jpej.jpg" class="shinchan" alt="Shinchan">
+    <img src="download (1).jpg" class="cat" alt="Cat 1">
+    <img src="download (2).jpg" class="cat2" alt="Cat 2">
+    <img src="9.jpej.jpg" class="shinchan2" alt="Shinchan 2">
   </div>
 
   <div class="confetti">
-    <span style="left: 10%"></span>
-    <span style="left: 30%"></span>
-    <span style="left: 50%"></span>
-    <span style="left: 70%"></span>
+    <span style="left: 15%"></span>
+    <span style="left: 35%"></span>
+    <span style="left: 55%"></span>
+    <span style="left: 75%"></span>
     <span style="left: 90%"></span>
   </div>
 
   <div class="container">
-    <h1>Happy Birthday, Tejel 🎉</h1>
-    <p>I know this is just a simple page — nothing fancy — but it comes from a place of genuine care.<br>
+    <h1>Happy Birthday Tejal 🎉</h1>
+   <p>I know this is just a simple page — nothing fancy — but its something i tried new.<br>
     You deserve all the peace, happiness, and warmth this world can offer. I truly hope today brings you smiles, laughter, and people who make you feel special — because you are.<br>
-    No expectations. Just a quiet wish from someone who genuinely wants you to be happy.</p>
+    No expectations. Just a quiet wish from someone who genuinely wants you to be happy</p>
     <div class="photos">
-      <img src="6.jpej.jpg" alt="Photo 1" />
-      <img src="1.jpeg.jpg" alt="Photo 2" />
-      <img src="5.jpej.jpg" alt="Photo 3" />
+      <img src="6.jpej.jpg" alt="Photo 1">
+      <img src="1.jpeg.jpg" alt="Photo 2">
+      <img src="5.jpej.jpg" alt="Photo 3">
     </div>
   </div>
 
   <script>
     function startPage() {
       document.getElementById('start-button').style.display = 'none';
-      document.getElementById('message').textContent = "Hope this little surprise made your day a bit brighter 💕";
+      document.getElementById('message').textContent = "Hope this made your day brighter 💕";
       document.getElementById('message').style.opacity = 1;
-      document.getElementById('bg-music').play();
+
+      const music = document.getElementById('bg-music');
+      music.play().catch(() => console.log("Tap again to enable sound."));
 
       const container = document.querySelector('.container');
       container.style.opacity = 1;
@@ -307,4 +231,3 @@
   </script>
 </body>
 </html>
-
